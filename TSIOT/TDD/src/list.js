@@ -9,10 +9,10 @@ module.exports = class List {
 
     add(key, value) {
         if(key === null || key === "" || typeof(key) !== "string")
-            return false
+            return false;
 
         if(value === null)
-            return false
+            return false;
 
         if (this.getIndex(key) !== -1)
             return false;
@@ -26,14 +26,14 @@ module.exports = class List {
     get(key) {
         let i = this.getIndex(key);
         if(i === -1)
-            return null
+            return null;
         return this.elements[i].value;
     }
 
     update(key, newvalue) {
         let i = this.getIndex(key);
         if(i === -1)
-            return false
+            return false;
         this.elements[i].value = newvalue;
         return true;
     }
@@ -49,7 +49,7 @@ module.exports = class List {
     delete(key) {
         let i = this.getIndex(key);
         if(i === -1)
-            return false
+            return false;
         this.elements.splice(i, 1);
         return true;
     }
