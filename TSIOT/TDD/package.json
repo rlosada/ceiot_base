@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "npm mocha --reporter spec"
+    "test": "npx mocha --reporter spec"
   },
   "keywords": [],
   "author": "",
