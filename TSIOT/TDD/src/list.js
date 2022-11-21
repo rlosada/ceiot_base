@@ -1,3 +1,5 @@
+const INVALID_INDEX =  -1 // Constante que representa un indice invalido dentro del arreglo de elementos
+
 module.exports = class List {
     elements = []
 
@@ -14,7 +16,7 @@ module.exports = class List {
         if(value === null)
             return false;
 
-        if (this.getIndex(key) !== -1)
+        if (this.getIndex(key) !== INVALID_INDEX)
             return false;
 
         this.elements.push(
@@ -25,14 +27,14 @@ module.exports = class List {
 
     get(key) {
         let i = this.getIndex(key);
-        if(i === -1)
+        if(i === INVALID_INDEX)
             return null;
         return this.elements[i].value;
     }
 
     update(key, newvalue) {
         let i = this.getIndex(key);
-        if(i === -1)
+        if(i === INVALID_INDEX)
             return false;
         this.elements[i].value = newvalue;
         return true;
@@ -48,7 +50,7 @@ module.exports = class List {
 
     delete(key) {
         let i = this.getIndex(key);
-        if(i === -1)
+        if(i === INVALID_INDEX)
             return false;
         this.elements.splice(i, 1);
         return true;
@@ -60,6 +62,6 @@ module.exports = class List {
                 return i;
             }
         }
-        return -1;
+        return INVALID_INDEX;
     }
 }
